@@ -14,25 +14,52 @@
       content="Il n’a pas fallu enchaîner l’homme moderne. Il a suffi de le rassurer."
     />
     <meta property="og:type" content="book" />
-    <meta property="og:image" content="./assets/images/partage.webp" />
+    <meta property="og:url" content="https://oxscuba.github.io/Le-Collectif-Soumis/" />
+    <meta
+      property="og:image"
+      content="https://oxscuba.github.io/Le-Collectif-Soumis/assets/images/partage.webp"
+    />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://oxscuba.github.io/Le-Collectif-Soumis/" />
     <title>Le Collectif soumis — Scuba Wizard</title>
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
     <link rel="stylesheet" href="./styles.css" />
     <script type="module" src="./script.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Book",
+        "name": "Le Collectif soumis",
+        "author": { "@type": "Person", "name": "Scuba Wizard" },
+        "description": "Satire de l’homme moderne sous perfusion de l’État-providence.",
+        "datePublished": "2026-10-06",
+        "inLanguage": "fr",
+        "image": "https://oxscuba.github.io/Le-Collectif-Soumis/assets/images/couverture.webp",
+        "url": "https://oxscuba.github.io/Le-Collectif-Soumis/"
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
     <header class="site-header" data-header>
       <a class="wordmark" href="#accueil" aria-label="Retour en haut">
-        <span class="wordmark-mark" aria-hidden="true">CS</span>
+        <img
+          class="wordmark-logo"
+          src="./assets/images/logo-LCS.webp"
+          width="640"
+          height="640"
+          alt=""
+          aria-hidden="true"
+        />
         <span>Le Collectif soumis</span>
       </a>
       <nav aria-label="Navigation principale">
         <a href="#dossier">Le dossier</a>
         <a href="#livre">Le livre</a>
-        <a class="nav-cta" href="#sortie">Sortir du guichet</a>
+        <a class="nav-cta" href="#parution">La parution</a>
       </nav>
     </header>
 
@@ -56,6 +83,9 @@
               Entrer dans le guichet
               <span aria-hidden="true">↓</span>
             </a>
+            <p class="release-line">
+              En librairie et en ligne le <strong>6 octobre 2026</strong>
+            </p>
           </div>
 
           <figure class="hero-visual reveal">
@@ -73,6 +103,60 @@
           </figure>
         </div>
         <div class="scroll-note" aria-hidden="true">Faites défiler la procédure</div>
+      </section>
+
+      <section class="launch section" id="parution" aria-labelledby="launch-title">
+        <div class="launch-copy reveal">
+          <p class="eyebrow">Avis de mise en circulation</p>
+          <h2 id="launch-title">Le dossier s’ouvre le 6 octobre 2026.</h2>
+          <p>
+            Le compte à rebours est engagé. D’ici là, la procédure poursuit
+            son cours — et la porte reste sous surveillance.
+          </p>
+          <div
+            class="countdown"
+            data-countdown
+            role="timer"
+            aria-live="off"
+            aria-label="Temps restant avant la parution"
+          >
+            <div><strong data-days>00</strong><span>jours</span></div>
+            <div><strong data-hours>00</strong><span>heures</span></div>
+            <div><strong data-minutes>00</strong><span>minutes</span></div>
+            <div><strong data-seconds>00</strong><span>secondes</span></div>
+          </div>
+          <p class="countdown-status" data-countdown-status>
+            Temps restant avant la parution
+          </p>
+          <div class="launch-actions">
+            <a
+              class="button button-primary is-disabled"
+              href="#"
+              data-purchase
+              aria-disabled="true"
+            >
+              <span data-purchase-label>Précommande bientôt ouverte</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <button class="text-action" type="button" data-share>
+              Partager la parution
+            </button>
+          </div>
+          <p class="purchase-note">
+            Le lien d’achat sera ajouté ici dès l’ouverture des précommandes.
+          </p>
+        </div>
+        <div class="launch-seal reveal" aria-hidden="true">
+          <img
+            src="./assets/images/logo-LCS.webp"
+            width="640"
+            height="640"
+            alt=""
+            loading="lazy"
+          />
+          <span>Publication programmée</span>
+          <strong>06 · 10 · 2026</strong>
+        </div>
       </section>
 
       <section class="manifesto section" id="dossier">
@@ -327,18 +411,24 @@
             </div>
             <div>
               <dt>Statut</dt>
-              <dd>En cours de révision</dd>
+              <dd>Parution le 6 octobre 2026</dd>
             </div>
           </dl>
           <a
-            class="button button-secondary"
+            class="button button-secondary is-disabled"
+            href="#"
+            data-purchase
+            aria-disabled="true"
+          >
+            <span data-purchase-label>Précommande bientôt ouverte</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="follow-link"
             href="https://x.com/Scuba_Wizard"
             target="_blank"
             rel="noreferrer"
-          >
-            Suivre l’avancement sur X
-            <span aria-hidden="true">↗</span>
-          </a>
+          >Suivre l’avancement sur X</a>
         </div>
       </section>
 

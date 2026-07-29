@@ -42,6 +42,8 @@ Le site transpose cet univers sous la forme d’une procédure administrative :
 le visiteur entre dans le guichet, traverse les mécanismes de la dépendance,
 rencontre son propre reflet et découvre une issue sans certificat.
 
+**Parution : 6 octobre 2026.**
+
 ## 🎨 Direction artistique
 
 - gravure satirique et fable politique ;
@@ -50,6 +52,9 @@ rencontre son propre reflet et découvre une issue sans certificat.
 - progression narrative verticale ;
 - Bitcoin comme rupture visuelle, sans promesse de solution magique ;
 - adaptation complète aux écrans mobiles.
+- compte à rebours dynamique jusqu’à la parution ;
+- bouton de précommande activable depuis une seule constante JavaScript ;
+- métadonnées sociales et structurées pour le référencement du livre.
 
 Toutes les illustrations et tous les textes publiés dans ce dépôt appartiennent
 à leur auteur. Leur présence dans un dépôt public n’autorise pas leur
@@ -76,6 +81,19 @@ Sortir du guichet
 Le site ne reproduit ni le manuscrit ni les documents de l’atelier d’écriture.
 Il ne présente qu’une sélection de textes et d’illustrations destinés à la
 communication publique du livre.
+
+## 🛒 Activer la précommande
+
+Dans `script.js`, remplacer la valeur vide de `PURCHASE_URL` par l’adresse de
+la page Amazon :
+
+```js
+const PURCHASE_URL = "https://www.amazon.fr/dp/XXXXXXXXXX";
+```
+
+Les boutons deviennent alors actifs automatiquement. Avant le 6 octobre 2026,
+ils affichent « Précommander le livre » ; à partir de la parution, ils affichent
+« Commander le livre ».
 
 ## 🚀 Développement local
 
@@ -128,7 +146,11 @@ https://oxscuba.github.io/Le-Collectif-Soumis/
 ├── public/
 │   ├── assets/images/        illustrations optimisées pour le web
 │   ├── .nojekyll             compatibilité GitHub Pages
-│   ├── favicon.svg
+│   ├── favicon-32.png         favicon
+│   ├── apple-touch-icon.png   icône iOS
+│   ├── icon-192.png           icône web app
+│   ├── icon-512.png           icône web app
+│   ├── site.webmanifest       manifeste du site
 │   └── robots.txt
 ├── index.html                contenu et structure du site
 ├── styles.css                identité graphique et responsive
