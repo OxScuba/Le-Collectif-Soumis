@@ -53,7 +53,9 @@ rencontre son propre reflet et découvre une issue sans certificat.
 - Bitcoin comme rupture visuelle, sans promesse de solution magique ;
 - adaptation complète aux écrans mobiles.
 - compte à rebours dynamique jusqu’à la parution ;
-- bouton de précommande activable depuis une seule constante JavaScript ;
+- bouton de commande Amazon activable depuis une seule constante JavaScript ;
+- chapitre 1 téléchargeable gratuitement en PDF ;
+- FAQ d’achat consacrée à l’édition brochée ;
 - métadonnées sociales et structurées pour le référencement du livre.
 
 Toutes les illustrations et tous les textes publiés dans ce dépôt appartiennent
@@ -82,7 +84,7 @@ Le site ne reproduit ni le manuscrit ni les documents de l’atelier d’écritu
 Il ne présente qu’une sélection de textes et d’illustrations destinés à la
 communication publique du livre.
 
-## 🛒 Activer la précommande
+## 🛒 Activer la commande Amazon
 
 Dans `script.js`, remplacer la valeur vide de `PURCHASE_URL` par l’adresse de
 la page Amazon :
@@ -91,9 +93,21 @@ la page Amazon :
 const PURCHASE_URL = "https://www.amazon.fr/dp/XXXXXXXXXX";
 ```
 
-Les boutons deviennent alors actifs automatiquement. Avant le 6 octobre 2026,
-ils affichent « Précommander le livre » ; à partir de la parution, ils affichent
-« Commander le livre ».
+Les boutons deviennent alors actifs automatiquement et affichent « Commander
+le livre ». Tant que l’adresse reste vide, ils indiquent « Commander dès le
+6 octobre » et demeurent désactivés. Cette première édition est prévue
+uniquement au format broché ; aucune précommande Kindle n’est annoncée.
+
+## 📄 Ajouter le chapitre 1
+
+Placer le fichier suivant dans `public/extraits/` :
+
+```text
+Chapitre_1_L_Odyssee_administrative_d_Adrien.pdf
+```
+
+Vite le copiera à la racine publique lors du build. Les boutons de téléchargement
+présents dans l’extrait et dans la FAQ utiliseront automatiquement ce fichier.
 
 ## 🚀 Développement local
 

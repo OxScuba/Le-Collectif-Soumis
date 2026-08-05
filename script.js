@@ -41,11 +41,11 @@ const countdownStatus = document.querySelector("[data-countdown-status]");
 const purchaseLinks = document.querySelectorAll("[data-purchase]");
 const purchaseLabels = document.querySelectorAll("[data-purchase-label]");
 
-const configurePurchaseLinks = (released = false) => {
-  const label = released ? "Commander le livre" : "Précommander le livre";
-
+const configurePurchaseLinks = () => {
   purchaseLabels.forEach((item) => {
-    item.textContent = PURCHASE_URL ? label : "Précommande bientôt ouverte";
+    item.textContent = PURCHASE_URL
+      ? "Commander le livre"
+      : "Commander dès le 6 octobre";
   });
 
   purchaseLinks.forEach((link) => {
@@ -91,7 +91,7 @@ const updateCountdown = () => {
     if (countdownStatus) countdownStatus.textContent = "Le livre est disponible.";
   }
 
-  configurePurchaseLinks(released);
+  configurePurchaseLinks();
 };
 
 updateCountdown();

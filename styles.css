@@ -1150,6 +1150,13 @@ h1 strong {
   text-transform: uppercase;
 }
 
+.button-download {
+  width: 100%;
+  margin-top: 1.4rem;
+  color: var(--paper);
+  background: var(--red);
+}
+
 blockquote {
   margin: 2rem 0 0;
   padding: 1.2rem 0 0 1.3rem;
@@ -1333,6 +1340,100 @@ blockquote {
 
 .publication-sheet dd {
   margin: 0;
+}
+
+.faq {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.65fr) minmax(0, 1.35fr);
+  gap: clamp(3rem, 9vw, 10rem);
+  background:
+    linear-gradient(rgba(143, 22, 28, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 22, 28, 0.035) 1px, transparent 1px),
+    var(--paper-deep);
+  background-size: 32px 32px;
+  align-items: start;
+}
+
+.faq-heading {
+  position: sticky;
+  top: 8rem;
+}
+
+.faq-heading h2 {
+  margin-bottom: 1.5rem;
+  font-family: var(--display);
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 400;
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+}
+
+.faq-heading > p:not(.eyebrow) {
+  max-width: 34rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.faq-list {
+  border-top: 1px solid var(--ink);
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--ink);
+}
+
+.faq-list summary {
+  position: relative;
+  padding: 1.35rem 3.5rem 1.35rem 0;
+  cursor: pointer;
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.2;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 0.35rem;
+  color: var(--red);
+  font-family: var(--sans);
+  font-size: 1.8rem;
+  font-weight: 500;
+  transform: translateY(-50%);
+}
+
+.faq-list details[open] summary::after {
+  content: "−";
+}
+
+.faq-list details > div {
+  max-width: 52rem;
+  padding: 0 3.5rem 1.6rem 0;
+}
+
+.faq-list details p {
+  margin: 0;
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+.faq-download {
+  display: inline-block;
+  margin-top: 1.1rem;
+  padding-bottom: 0.3rem;
+  color: var(--red-dark);
+  border-bottom: 1px solid currentColor;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .follow-link {
@@ -1527,6 +1628,7 @@ footer a {
   .editorial-intro,
   .diagnostic,
   .excerpt,
+  .faq,
   .author,
   .soft-power,
   .mirror,
@@ -1616,7 +1718,8 @@ footer a {
   }
 
   .diagnostic-copy,
-  .excerpt-heading {
+  .excerpt-heading,
+  .faq-heading {
     position: static;
   }
 
@@ -1742,6 +1845,14 @@ footer a {
   .publication-sheet div {
     grid-template-columns: 1fr;
     gap: 0.35rem;
+  }
+
+  .faq-list summary {
+    padding-right: 2.8rem;
+  }
+
+  .faq-list details > div {
+    padding-right: 0;
   }
 
   .chapter,
