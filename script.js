@@ -104,28 +104,31 @@ purchaseLinks.forEach((link) => {
 });
 
 const shareButton = document.querySelector("[data-share]");
+const SHARE_URL = "https://oxscuba.github.io/Le-Collectif-Soumis/";
 
 shareButton?.addEventListener("click", async () => {
-  const shareData = {
-    title: "Le Collectif soumis",
-    text: "Le Collectif soumis, par Scuba Wizard — parution le 6 octobre 2026.",
-    url: window.location.href.split("#")[0],
-  };
-
   try {
-    if (navigator.share) {
-      await navigator.share(shareData);
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(SHARE_URL);
     } else {
-      await navigator.clipboard.writeText(shareData.url);
-      shareButton.textContent = "Lien copié";
-      window.setTimeout(() => {
-        shareButton.textContent = "Partager la parution";
-      }, 2200);
+      const fallback = document.createElement("textarea");
+      fallback.value = SHARE_URL;
+      fallback.setAttribute("readonly", "");
+      fallback.style.position = "fixed";
+      fallback.style.opacity = "0";
+      document.body.appendChild(fallback);
+      fallback.select();
+      const copied = document.execCommand("copy");
+      fallback.remove();
+      if (!copied) throw new Error("Clipboard unavailable");
     }
-  } catch (error) {
-    if (error?.name !== "AbortError") {
-      shareButton.textContent = "Partage indisponible";
-    }
+
+    shareButton.textContent = "Lien copié ✓";
+    window.setTimeout(() => {
+      shareButton.textContent = "Copier le lien de la parution";
+    }, 2200);
+  } catch {
+    shareButton.textContent = "Copie indisponible";
   }
 });
 

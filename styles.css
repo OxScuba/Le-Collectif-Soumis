@@ -1356,36 +1356,46 @@ blockquote {
   align-items: center;
 }
 
-.author-mark {
-  display: grid;
-  justify-items: center;
-  padding: clamp(1.5rem, 4vw, 3rem);
-  border: 1px solid rgba(243, 234, 214, 0.55);
-  text-align: center;
-  transform: rotate(-1.5deg);
+.author-portrait {
+  position: relative;
+  width: min(100%, 36rem);
+  margin: 0;
+  padding: 0.55rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--paper);
+  box-shadow: 16px 16px 0 var(--red-dark);
+  transform: rotate(-1deg);
 }
 
-.author-mark img {
-  width: min(100%, 20rem);
+.author-portrait img {
+  width: 100%;
   height: auto;
-  margin-bottom: 1.4rem;
+  border: 1px solid var(--ink);
 }
 
-.author-mark span,
-.author-mark strong {
+.author-portrait figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0.45rem 0.35rem;
+}
+
+.author-portrait span,
+.author-portrait strong {
   font-family: var(--sans);
   text-transform: uppercase;
 }
 
-.author-mark span {
+.author-portrait span {
   font-size: 0.66rem;
   letter-spacing: 0.15em;
 }
 
-.author-mark strong {
-  margin-top: 0.6rem;
-  color: var(--paper);
-  font-size: clamp(1.35rem, 3vw, 2.5rem);
+.author-portrait strong {
+  color: var(--red);
+  font-size: clamp(0.85rem, 1.5vw, 1.25rem);
   letter-spacing: 0.06em;
 }
 
@@ -1610,7 +1620,7 @@ footer a {
     position: static;
   }
 
-  .author-mark {
+  .author-portrait {
     width: min(100%, 30rem);
     margin: 0 auto;
   }
@@ -1717,6 +1727,16 @@ footer a {
 
   .author-actions .follow-link {
     margin-top: 1.2rem;
+  }
+
+  .author-portrait {
+    box-shadow: 8px 8px 0 var(--red-dark);
+  }
+
+  .author-portrait figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
   }
 
   .publication-sheet div {
