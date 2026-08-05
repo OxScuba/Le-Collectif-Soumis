@@ -978,6 +978,32 @@ h1 strong {
   line-height: 1.7;
 }
 
+.excerpt-visual {
+  width: min(100%, 22rem);
+  margin: 3rem 0 0;
+  padding: 0.45rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--paper);
+  box-shadow: 10px 10px 0 var(--red-dark);
+  transform: rotate(-1deg);
+}
+
+.excerpt-visual img {
+  width: 100%;
+  height: auto;
+}
+
+.excerpt-visual figcaption {
+  padding: 0.75rem 0.3rem 0.25rem;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .excerpt-paper {
   position: relative;
   padding: clamp(2rem, 5vw, 5rem);
@@ -1249,6 +1275,95 @@ blockquote {
   text-transform: uppercase;
 }
 
+.author {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.65fr) minmax(0, 1.35fr);
+  gap: clamp(3rem, 9vw, 10rem);
+  color: var(--paper);
+  background:
+    radial-gradient(circle at 15% 30%, rgba(143, 22, 28, 0.5), transparent 26rem),
+    var(--ink);
+  align-items: center;
+}
+
+.author-mark {
+  display: grid;
+  justify-items: center;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid rgba(243, 234, 214, 0.55);
+  text-align: center;
+  transform: rotate(-1.5deg);
+}
+
+.author-mark img {
+  width: min(100%, 20rem);
+  height: auto;
+  margin-bottom: 1.4rem;
+}
+
+.author-mark span,
+.author-mark strong {
+  font-family: var(--sans);
+  text-transform: uppercase;
+}
+
+.author-mark span {
+  font-size: 0.66rem;
+  letter-spacing: 0.15em;
+}
+
+.author-mark strong {
+  margin-top: 0.6rem;
+  color: var(--paper);
+  font-size: clamp(1.35rem, 3vw, 2.5rem);
+  letter-spacing: 0.06em;
+}
+
+.author h2 {
+  margin-bottom: 1.2rem;
+  font-family: var(--display);
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+
+.author-copy > p:not(.eyebrow, .author-lead) {
+  max-width: 54rem;
+  font-size: clamp(1.02rem, 1.45vw, 1.2rem);
+  line-height: 1.72;
+}
+
+.author-lead {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+  color: var(--paper-deep);
+  font-size: clamp(1.4rem, 2.7vw, 2.4rem);
+  font-style: italic;
+  line-height: 1.25;
+}
+
+.author-quote {
+  max-width: 52rem;
+  margin: 2.2rem 0;
+  padding: 1.5rem 0 1.5rem 1.4rem;
+  border-top: 1px solid rgba(243, 234, 214, 0.35);
+  border-bottom: 1px solid rgba(243, 234, 214, 0.35);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.author-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 0.8rem;
+  margin-top: 2.2rem;
+}
+
+.author-actions .follow-link {
+  color: var(--paper);
+}
+
 .hero-visual img,
 .chapter-image img,
 .soft-power-image img,
@@ -1332,6 +1447,7 @@ footer a {
   .editorial-intro,
   .diagnostic,
   .excerpt,
+  .author,
   .soft-power,
   .mirror,
   .narrow-door,
@@ -1400,6 +1516,11 @@ footer a {
   .diagnostic-copy,
   .excerpt-heading {
     position: static;
+  }
+
+  .author-mark {
+    width: min(100%, 30rem);
+    margin: 0 auto;
   }
 }
 
@@ -1473,6 +1594,20 @@ footer a {
   .excerpt-paper {
     padding: 1.5rem;
     box-shadow: 8px 8px 0 var(--red-dark);
+  }
+
+  .excerpt-visual {
+    width: min(82vw, 22rem);
+    margin-inline: auto;
+  }
+
+  .author-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .author-actions .follow-link {
+    margin-top: 1.2rem;
   }
 
   .publication-sheet div {
